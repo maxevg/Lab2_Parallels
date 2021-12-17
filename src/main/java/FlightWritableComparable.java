@@ -10,5 +10,10 @@ public class FlightWritableComparable implements WritableComparable {
 
     public FlightWritableComparable() {}
 
-    public FlightWritableComparable(int )
+    public FlightWritableComparable(int AEROPORT_ID, int INDENTITY) {
+        this.AEROPORT_ID = AEROPORT_ID;
+        this.INDENTITY = INDENTITY;
+    }
+
+    
 }
