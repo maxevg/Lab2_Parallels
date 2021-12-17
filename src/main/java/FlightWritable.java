@@ -1,4 +1,4 @@
-import 
+import org.apache.hadoop.io.Writable;
 
 
 
