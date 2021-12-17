@@ -1,6 +1,5 @@
 import org.apache.hadoop.io.Writable;
 
 
-
-public class FlightWritable {
+public class FlightWritable implements Writable {
 }
