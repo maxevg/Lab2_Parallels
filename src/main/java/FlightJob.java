@@ -1,4 +1,5 @@
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -14,8 +15,8 @@ public class FlightJob {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(FlightPartitioner.class);
         job.setGroupingComparatorClass(FlightGroupingComparatorClass.class);
-        job.setReducerClass(JoinReducer.class);
-        job.setMapOutputKeyClass(TextPair.class);
+        job.setReducerClass(FlightReducer.class);
+        job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
