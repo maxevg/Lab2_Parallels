@@ -15,5 +15,13 @@ public class FlightWritableComparable implements WritableComparable {
         this.INDENTITY = INDENTITY;
     }
 
-    
+    public void write(DataOutput dataOutput) throws IOException {
+        dataOutput.writeInt(this.AEROPORT_ID);
+        dataOutput.writeInt(this.INDENTITY);
+    }
+
+    public void readFields(DataInput dataInput) throws IOException {
+        this.AEROPORT_ID = dataInput.readInt();
+        this.INDENTITY = dataInput.readInt();
+    }
 }
