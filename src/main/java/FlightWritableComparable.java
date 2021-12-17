@@ -5,6 +5,10 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class FlightWritableComparable implements WritableComparable {
-    private int AIRPORT_ID;
+    private int AEROPORT_ID;
     private int INDENTITY;
+
+    public FlightWritableComparable() {}
+
+    public FlightWritableComparable(int )
 }
