@@ -1,5 +1,8 @@
 import org.apache.hadoop.io.Writable;
 
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 public class FlightWritable implements Writable {
     private int DEST_AIRPORT_ID;
@@ -16,6 +19,18 @@ public class FlightWritable implements Writable {
         this.CANCELLED = CANCELLED;
     }
 
+    public void write(DataOutput dataOutput) throws IOException {
+        dataOutput.writeInt(this.DEST_AIRPORT_ID);
+        dataOutput.writeFloat(this.ARR_DELAY);
+        dataOutput.writeFloat(this.AIR_TIME);
+        dataOutput.writeFloat(this.CANCELLED);
+    }
 
+    public void readFields(DataInput dataInput) throws IOException {
+        this.DEST_AIRPORT_ID = dataInput.readInt();
+        this.ARR_DELAY = dataInput.readFloat();
+        this.AIR_TIME = dataInput.readFloat();
+        this.CANCELLED = dataInput.readFloat();
+    }
 
 }
