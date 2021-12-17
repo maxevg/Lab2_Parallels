@@ -8,5 +8,6 @@ public class FlightWritable implements Writable {
     private float CANCELLED;
 
     public FlightWritable() {}
+    
 
 }
