@@ -8,11 +8,10 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
 
 
     @Override
-    public void map(Text key, TupleWritable value,
-                    OutputCollector<Text, Text> output,
-                    Reporter reporter) throws IOException {
-        Text call = (Text) value.get(0);
-        Text system = (Text) value.get(1);
-        output.collect(call, system);
+    public void map(LongWritable key, Text value, Context context) throws IOException {
+        if (key.get() > 0) {
+            String[] Table = value.toString().split(",");
+            int DestAeroportID = Integer.parseInt(table
+        }
     }
 }
