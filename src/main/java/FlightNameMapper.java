@@ -11,7 +11,7 @@ public class FlightNameMapper extends Mapper<LongWritable, Text, FlightWritableC
             String[] Table = value.toString().split("\",");
             int DestAeroportID = Integer.parseInt(Table[0].replaceAll("\"", ""));
             FlightWritableComparable CurrentKey = new FlightWritableComparable(DestAeroportID, 0);
-            
+            context.write(CurrentKey);
         }
     }
 }
