@@ -6,7 +6,11 @@ import java.io.IOException;
 
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     private static float CheckNullDelay(String current) {
-        if ()
+        if (current.equals("")) {
+            return 0.0F;
+        } else {
+            return Float.parseFloat(current);
+        }
     }
 
     @Override
@@ -15,7 +19,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
             String[] Table = value.toString().split(",");
             int DestAeroportID = Integer.parseInt(Table[14]);
             float ArrDelay = CheckNullDelay(Table[17]);
-
+            if (ArrDelay > 0.0F) {
+                
+            }
         }
     }
 }
