@@ -22,6 +22,12 @@ public class FlightReducer extends Reducer<FlightWritableComparable, Text, Text,
             } else if (CurrentValue > Max) {
                 Max = CurrentValue;
             }
+            Average += CurrentValue;
+            Count++;
+        }
+        if (Count != 0) {
+            Average /= Count;
+            context.write(NameInfo, new Text("MINDELA: " + Min + "; MAXDELAY: " + Max + "; AVERAGE: " + Average + ";"));
         }
     }
 }
