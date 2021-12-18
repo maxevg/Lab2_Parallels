@@ -24,7 +24,18 @@ public class FlightWritableComparable implements WritableComparable {
         return Integer.compare(this.AEROPORT_ID, Second.AEROPORT_ID);
     }
 
-    public int compareTo(Ob)
+    public int compareTo(Object O) {
+        FlightWritableComparable Second = (FlightWritableComparable) O;
+        if (this.AEROPORT_ID > Second.AEROPORT_ID) {
+            return 1;
+        } else if (this.AEROPORT_ID < Second.AEROPORT_ID) {
+            return  -1;
+        } else if (this.INDENTITY > Second.INDENTITY) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 
     public void write(DataOutput DataOutput) throws IOException {
         DataOutput.writeInt(this.AEROPORT_ID);
