@@ -10,7 +10,7 @@ public class FlightNameMapper extends Mapper<LongWritable, Text, FlightWritableC
         if (key.get() > 0) {
             String[] Table = value.toString().split("\",");
             int DestAeroportID = Integer.parseInt(Table[0].replaceAll("\"", ""));
-            FlightWritableComparable CurrentKey
+            FlightWritableComparable CurrentKey = new FlightWritableComparable()
         }
     }
 }
