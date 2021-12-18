@@ -20,17 +20,19 @@ public class FlightWritableComparable implements WritableComparable {
     }
 
     public int compareID(Object O) {
-        FlightWritableComparable second = (FlightWritableComparable) O;
-        return Integer.compare(this.AEROPORT_ID, second.AEROPORT_ID);
+        FlightWritableComparable Second = (FlightWritableComparable) O;
+        return Integer.compare(this.AEROPORT_ID, Second.AEROPORT_ID);
     }
 
-    public void write(DataOutput dataOutput) throws IOException {
-        dataOutput.writeInt(this.AEROPORT_ID);
-        dataOutput.writeInt(this.INDENTITY);
+    public int compareTo(Ob)
+
+    public void write(DataOutput DataOutput) throws IOException {
+        DataOutput.writeInt(this.AEROPORT_ID);
+        DataOutput.writeInt(this.INDENTITY);
     }
 
-    public void readFields(DataInput dataInput) throws IOException {
-        this.AEROPORT_ID = dataInput.readInt();
-        this.INDENTITY = dataInput.readInt();
+    public void readFields(DataInput DataInput) throws IOException {
+        this.AEROPORT_ID = DataInput.readInt();
+        this.INDENTITY = DataInput.readInt();
     }
 }
